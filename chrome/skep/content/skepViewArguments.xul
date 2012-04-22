@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://skep/locale/skep.dtd">
+<?xml-stylesheet href="chrome://skep/skin/skepViewInfo.css" type="text/css"?>
+
+<!-- skepViewArguments.xul
+ Description: xul file for displaying of the view argument interface 
+ @author Michael Gillies, Cameron Bradley
+ Change History: 
+ Who When Description 
+ Michael.G 30/09/10 *SKEPFF-80 added rebuttal url button and copy url button*
+ Michael.G 1/10/10  *removal of placeholder descriptions*
+ Michael.G 7/10/10  *added header comment*
+ Michael.G 8/10/10  *SKEPFF-90 science description argument now resizeing*
+ Michael.G 13/10/10 *SKEPFF-97 Specified content type on iframe to get rid of mozilla submisiosn warning*
+ Michael.G 14/10/10 *SKEPFF-101 changed description and visibility of copy rebutal url 
+ Michael.G 28/10/10  Code review Changes
+ Michael.G 28/10/10 *changed version to 1.1
+ Michael.G 3/11/10  *changed url links to use our urlSkep class instead of url to avoid any conficts in browser-->
+
+<window orient="horizontal"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<!-- Import Javascripts. -->
+	<script type="application/x-javascript" src="chrome://skep/content/skepViewArguments.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepConfig.js"/>
+	
+<!-- Import Bundleset. -->
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="xs-hw-string-bundle"
+      src="chrome://skep/locale/skep.properties" />
+  </stringbundleset>
+
+<!-- Init main SS popup used to submit a link review. -->  
+<popupset id="mainPopupSet">
+ <!-- Testimony window -->
+ <panel id="skep-popup-view" ignorekeys="true" noautohide="false" position="after_start" >		
+	
+<vbox id="mainVbox" >
+	 <hbox id="skep-header">
+	  <box id="skep-header-smallLogo" onclick="Skeptical.BrowserOverlay.loadHomePage(event);" />
+	 </hbox>
+ <hbox id="mainViewInterface">
+  	<vbox id="test-vbox" width="400">
+
+<!-- ArticleTitle Header. -->
+	<vbox id="skep-articleTitle">
+	 <hbox id="skep-rating-articleHeader">
+	  <label id="skep-view-title" value=""/>
+	 </hbox>
+    </vbox>
+
+<!-- ArticleTitle Header. -->
+	<vbox id="skep-articleTitle">
+	 <hbox id="skep-rating-articleHeader">
+	  <label id="skep-title-articleText" width="50" value="Article Title:"/>
+      <label id="skepTitle" flex="2" maxWidth="300"/>
+	 </hbox>
+    </vbox>
+
+<!-- ArticleType Header. -->
+
+ <vbox id="skep-articleType">
+  <hbox id="skep-rating-typeHeader">
+<!-- Comboboxes for Type and Bias selection.  -->
+    <hbox flex="1">
+	 <label id="skep-title-typeText" value="Type: "/> 
+	 <label id="skepType" value="" />
+    </hbox>
+	
+    <hbox flex="1">
+	 <label id="skep-title-biasText" value="Bias: "/> 
+	 <label id="skepBias" value="" />
+	</hbox>
+  </hbox>
+  <hbox id="skep-publishingHeader">
+	 <label id="skep-title-article-publishing-date" value="Article publishing date: "/>
+	 <label id="skepArticlePublishingDate"/>
+  </hbox>
+ </vbox>
+ 
+   <vbox id="skep-title">
+	 <hbox id="skep-rating-header">
+	  <label id="skep-title-argumentText" value="Select or search for an argument to view."/>
+	 </hbox>
+	
+	<!-- Argument XUL tree. -->
+	
+	<textbox id="argument-view-txtBox" type="search" tooltiptext="Type argument to search for:" oncommand="Skeptical.ViewOverlay.populateUI(event);"/>
+
+     <tree seltype="single"
+      id="myTodoListTreeView"
+	  rows="7"
+	  onselect="Skeptical.ViewOverlay.selectedArgument();"
+	  hidecolumnpicker="true">
+      <treecols>
+       <treecol flex="1" id="A" label="Currently listed arguments" primary="true" />
+	  </treecols>
+  	  <treechildren id="children_root_view">
+  	  </treechildren>
+	</tree>
+	<label id="skepViewArgumentsCount" /> 
+	<label id="switchAdd" class="urlSkep" value="Create a report" tooltiptext="click here to create a report" onclick="Skeptical.ViewOverlay.switchInterface(event);" />
+   </vbox>
+   
+<!-- Status Header. -->
+	<vbox id="skep-viewTitle">
+	 <hbox id="skep-rating-header">
+	  <label id="status-viewTxtBox" value="Status:" />
+	 </hbox>
+    </vbox>
+   
+     <label id="version-viewTxtBox" value=" Version: 1.1.2" tooltiptext="Version 1.1.2" />
+ </vbox>
+  
+  <!--Skep context. -->
+ <menupopup id="skep-viewContext">
+	<menuitem id="homepage_menuitem" class="menuitem-iconic" label="Visit the Homepage" onclick="Skeptical.BrowserOverlay.loadHomePage(event);" />
+	<menuitem id="facebook_menuitem" class="menuitem-iconic" label="Visit the Facebook" onclick="Skeptical.BrowserOverlay.loadFaceBook(event);" />
+	<menuitem id="twitter_menuitem" class="menuitem-iconic" label="Follow on Twitter" onclick="Skeptical.BrowserOverlay.loadTwitter(event);" />
+	<menuitem id="iphone_menuitem" class="menuitem-iconic" label="Download Iphone App" onclick="Skeptical.BrowserOverlay.loadIphone(event);" />
+ </menupopup>
+  
+<!-- Rebuttal UI -->
+  <vbox id="explanationWindow" width="320" maxwidth="320" maxHeight="260" hidden="true">
+   <groupbox id="skeptic-group" width="300" >
+    <caption id="skeptic-caption">
+     <label id="skepticCaptionLabel" value="Skeptics say" />
+    </caption>
+    <description id="skeptic-desc"></description>
+   </groupbox>
+   <groupbox id="science-group" width="300" maxheight="190">
+    <caption id="science-caption" >
+    <label id="scienceCaptionLabel" value="The science says" align="left"/>
+    </caption>
+    <iframe id="scienceDescHtml" type="chrome" width="340" maxheight="165"/>
+   </groupbox>
+   <hbox>
+   <spacer flex="1"/>
+     <label id="rebuttal-button" class="urlSkep" tooltiptext="Copy full rebuttal link to clipboard" value="Copy URL to clipboard" align="right" onclick="Skeptical.ViewOverlay.copyUrlToClipboard(event);"/>
+
+   </hbox>
+   	 <description id="rebuttalURL" hidden="false" class="urlSkep" onclick="Skeptical.ViewOverlay.onRebuttalButtonClick();">
+   	 </description>
+  </vbox>
+ </hbox>
+</vbox>
+
+ </panel>
+</popupset>
+
+<!--Toolbar button initilization. -->
+	<toolbarpalette id="BrowserToolbarPalette">
+	 <toolbarbutton id="skep-viewButton"
+	 context="skep-viewContext"
+	 popup="skep-popup-view"
+	 tooltiptext=""
+	 insertbefore="urlbar-container"
+	 onclick="Skeptical.ViewOverlay.checkInternet();"/>
+	</toolbarpalette>
+
+</window>

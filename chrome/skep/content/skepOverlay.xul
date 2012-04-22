@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://skep/locale/skep.dtd">
+<?xml-stylesheet href="chrome://skep/skin/skep.css" type="text/css"?>
+
+<!-- skepOverlay.xul
+ Description: xul file for displaying of the add arguments interface
+ for sending of article reports
+ @author Cameron Bradley
+ Change History: 
+ Who When Description 
+ Michael.G 30/09/10 *removed code related to radio buttons*
+ Michael.G 7/10/10 *added header comment* 
+ Michael.G 13/10/10 *SKEPFF-69 added argument descriptiton popup to report interface*
+ Michael.G 13/10/10 *SKEPFF-100  altered skepgroup groupbox to eliminate extra whitespace*
+ Michael.G 14/10/10 *removed width attribute from skepticDescHtml iframe*
+ Michael.G 28/10/10 *Code review Changes
+ Michael.G 28/10/10 *changed version to 1.1
+ Michael.G 3/11/10  *changed class of type url to urlSkep-->
+
+<window orient="horizontal"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<!-- Import Javascripts. -->
+	<script type="application/x-javascript" src="chrome://skep/content/namespace.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepConfig.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepUi.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepPrefs.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepCore.js"/>	
+	<script type="application/x-javascript" src="chrome://skep/content/skepticalOverlay.js" />
+	
+<!-- Import Bundleset. -->
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="xs-hw-string-bundle"
+      src="chrome://skep/locale/skep.properties" />
+  </stringbundleset>
+
+<!-- Init main SS popup used to submit a link review. -->  
+<popupset id="mainPopupSet">
+ <!-- Testimony window -->
+ <panel id="skep-popup" ignorekeys="true" noautohide="false" position="after_start" >		
+	
+<!-- Background of popup. -->
+	<vbox id="skep-elements">
+	 <!-- header -->
+	 <hbox id="skep-header">
+	  <box id="skep-header-addLogo"
+	  onclick="Skeptical.BrowserOverlay.loadHomePage(event);" />
+	 </hbox>
+
+<!-- ArticleTitle Header. -->
+	<vbox id="skep-articleTitle">
+	 <hbox id="skep-rating-articleHeader">
+	  <label id="title-txtBox" value="loading arguments..."/>
+	 </hbox>
+    </vbox>
+
+ <vbox id="articleInfo">
+<!-- ArticleTitle Header. -->
+	<vbox id="skep-articleTitle">
+	 <hbox id="skep-rating-articleHeader">
+	  <label id="skep-title-articleText" value="Article Title:"/>
+	 </hbox>
+	 <textbox id="article-txtBox"  type="search" tooltiptext="Enter article title:"  oncommand="Skeptical.BrowserOverlay.changedArticleTitle();"/>
+    </vbox>
+
+<!-- ArticleType Header. -->
+
+ <vbox id="skep-articleType">
+  <hbox id="skep-rating-typeHeader">
+
+<!-- Comboboxs for Type and Bias selection.  -->
+
+	<label id="skep-title-typeText" value="Type: "/> 
+	<menulist id="articleTypeList" orient="horizontal" width="104" height="40" flex="1">
+	 <menupopup>
+	  <menuitem label="&skepBlog.label;" 				value="1"  closemenu="single" />
+	  <menuitem label="&skepForum.label;" 			value="2"  closemenu="single" />
+	  <menuitem label="&skepMainstreamMedia.label;" 	value="3"  closemenu="single" />
+	  <menuitem label="&skepOnlineArticle.label;" 	value="4"  closemenu="single" />
+	  <menuitem label="&skepPeerReviewStudy.label;" 	value="5"  closemenu="single" />
+	 </menupopup>
+	</menulist>
+	
+	
+	<label id="skep-title-biasText" value="Bias: "/> 
+	<menulist id="articleBiasList" orient="horizontal" width="104" height="40" flex="1">
+	 <menupopup>
+	  <menuitem label="&skepSkeptical.label;"			 value="1" closemenu="single" />
+	  <menuitem label="&skepNeutral.label;" 			 value="2" closemenu="single" />
+	  <menuitem label="&skepProAGW.label;" 			 value="3"  closemenu="single" />
+	 </menupopup>
+	</menulist>
+	
+  </hbox>
+  <hbox>
+	  <label id="skep-title-article-publishing-date" value="Article publishing date: "/>
+	  <datepicker id="skep-article-publishing-date" tooltiptext="Enter the date the article was published" type="popup"/>
+  </hbox>
+ </vbox>
+ </vbox>
+
+<!-- Arguments Header. -->
+
+   <vbox id="skep-title">
+	 <hbox id="skep-rating-header">
+	  <label id="skep-title-argumentText" value="Select an argument (search to narrow options)"/>
+	  <!--  <image id="skep-argumemt-label" /> -->
+	 </hbox>
+	
+	<!-- Argument XUL tree. -->
+	
+	<textbox id="argument-txtBox" type="search" tooltiptext="Type argument to search for:" oncommand="Skeptical.BrowserOverlay.searchForArgumentByKeyword(event);"/>
+
+     <tree seltype="single"
+      id="myTodoListTree"
+	  rows="6"
+	  hidecolumnpicker="true"
+      onselect="Skeptical.BrowserOverlay.changedArticleTitle(), Skeptical.BrowserOverlay.selectedArgument();">
+      <treecols>
+       <treecol flex="1" id="A" label="Arguments" primary="true" />
+	  </treecols>
+  	  <treechildren id="children_root">
+  	  </treechildren>
+	</tree>
+	<hbox>
+	<label id="skepArgumentsCount" flex="1" align="right"/>
+	</hbox>
+   </vbox>
+
+<!-- UserName Header. -->
+   <vbox id="skep-title">
+	<hbox id="skep-rating-header">
+	 <label id="userNameLabel-txtBox" class="urlSkep" value="Login to send report"
+	  onclick="Skeptical.BrowserOverlay.openOptionsDialog(event);" />
+	 <label id="userName-txtBox" value="" />
+	</hbox>
+   </vbox>
+ 
+<!-- Status Header. -->
+	<vbox id="skep-title">
+	 <hbox id="skep-rating-header">
+	  <label id="status-txtBox" value="" />
+	 </hbox>
+    </vbox>
+
+<!-- Send Report and Cancel Buttons. -->
+	<vbox id="skep-buttons">
+	 <hbox>
+	  <label id="switchView" class="urlSkep" value="View report" tooltiptext="click here to view report" onclick="Skeptical.BrowserOverlay.switchInterface(event);" />
+	  <button id="sendReport" label="Send Report" width="104" oncommand="Skeptical.BrowserOverlay.saveUserReport(event)"/>
+	  <button id="cancelReport" label="Cancel" width="104" tooltiptext="Cancel Report" onclick="Skeptical.BrowserOverlay.hidePopUp(event);"/> 
+	 </hbox>
+	</vbox>
+
+  <label id="version-txtBox" value="Version: 1.1.2" tooltiptext="Version 1.1.2" />
+</vbox>
+
+<!--Skep context. -->
+ <menupopup id="skep-context" >
+	<menuitem id="homepage_menuitem" class="menuitem-iconic" label="Visit the Homepage" onclick="Skeptical.BrowserOverlay.loadHomePage(event);" />
+	<menuitem id="facebook_menuitem" class="menuitem-iconic" label="Visit the Facebook" onclick="Skeptical.BrowserOverlay.loadFaceBook(event);" />
+	<menuitem id="twitter_menuitem" class="menuitem-iconic" label="Follow on Twitter" onclick="Skeptical.BrowserOverlay.loadTwitter(event);" />
+	<menuitem id="iphone_menuitem" class="menuitem-iconic" label="Download Iphone App" onclick="Skeptical.BrowserOverlay.loadIphone(event);" />
+ </menupopup>
+
+ </panel> 
+   <panel id="explainPopup" ignorekeys="true" noautofocus="true" norestorefocus="true" noautohide="false" position="after_start">
+   <vbox id="skepticWindow" maxwidth="300" >
+    <groupbox id="skepGroup" width="300" maxheight="300">
+     <caption id="skepCaption">
+     <label value="Skeptics say"/>
+     </caption>
+      <iframe id="skepticDescHtml" type="chrome"  maxheight="290" />
+     </groupbox>
+     <spacer flex="1"/>
+   </vbox>
+ </panel>
+</popupset>
+
+<!--Toolbar button initilization. -->
+	<toolbarpalette id="BrowserToolbarPalette">
+	 <toolbarbutton id="skep-addButton"
+	 context="skep-context"
+	 popup="skep-popup"
+	 tooltiptext="Create a new report"
+	 insertbefore="urlbar-container"
+	 onclick="Skeptical.BrowserOverlay.checkInternet(), Skeptical.BrowserOverlay.changedArticleTitle();"/>
+	</toolbarpalette>
+</window>

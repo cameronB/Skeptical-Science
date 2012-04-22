@@ -1,0 +1,10 @@
+
+<!-- drop down items main interface -->
+<!ENTITY skepBlog.label						"Blog">
+<!ENTITY skepForum.label					"Forum">
+<!ENTITY skepMainstreamMedia.label			"Mainstream Media">
+<!ENTITY skepOnlineArticle.label			"Online Article">
+<!ENTITY skepPeerReviewStudy.label			"Peer Review Study">
+<!ENTITY skepSkeptical.label				"Skeptical">
+<!ENTITY skepNeutral.label					"Neutral">
+<!ENTITY skepProAGW.label					"ProAGW">

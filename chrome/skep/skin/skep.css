@@ -1,0 +1,363 @@
+/*
+ * skep.css
+ * Description: css file for controling style of skepOverlay.xul and its toolbar icon
+ * @author Cameron Bradley, Michael Gillies 24/9/2010
+ * Change History:
+ * Who When Description
+ * ------------------------------------------------------------------
+ * Michael.G 13/10/10 <<added comment header>>
+ * Michael.G 13/10/10 <<SKEPFF-100 added css for adjusting position of rebuttal info>>
+ * Michael.G 3/11/10  <<changed class of type url to urlSkep for SKEPFF-121>>
+ */
+
+#main-window #skep-addButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/plusIcon/new+.png");
+}
+
+/* rating window */
+#skep-popup {
+	padding: 0;
+	margin: 0;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+#skep-elements {
+	background: #F5F5DC;
+	width: 100px;
+}
+/*important to maintain visual consistency between login and main window*/
+#skep-prefs {
+-moz-appearance: none !important;
+background-color: #F5F5DC !important;
+}
+
+#skepGroup {
+    position:relative;
+}
+
+#skepticDescHtml {
+    position:absolute;
+    padding:0px;
+    padding-top:0px !important;
+    padding-bottom:1px !important;
+    border-style:none;
+    border:0px;
+    margin-top:-8px;
+}
+
+/* header */
+#skep-header {
+	height: 60px;
+	margin-left: 7px;
+	margin-right: 7px;
+	margin-top: 7px;
+	width: 00px;
+}
+
+#explainPopup{
+    background: #F5F5DC;
+    -moz-appearance: none;
+    -moz-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+#skepCaption{
+    background: #F5F5DC;
+    color: red;
+}
+
+/* header */
+#skep-optionsHeader {
+	height: 60px;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+#skep-header-addLogo {
+	background: url("chrome://skep/skin/skepArt/Header_Create_Report.png") top left no-repeat;
+	cursor: pointer;
+	height: 69px;
+	width: 375px;
+}
+
+#skep-header-optionsLogo {
+	background: url("chrome://skep/skin/skepArt/Firefox_Header_transAdd.png") top left no-repeat;
+	cursor: pointer;
+	height: 69px;
+	width: 375px;
+}
+
+#homepage_menuitem {
+	list-style-image: url("chrome://skep/skin/skepArt/14_14/skeptical.png");
+		
+}
+
+#facebook_menuitem {
+	list-style-image: url("chrome://skep/skin/skepArt/14_14/facebook.png");
+		
+}
+
+#twitter_menuitem {
+	list-style-image: url("chrome://skep/skin/skepArt/14_14/twitter.png");
+		
+}
+
+#iphone_menuitem {
+	list-style-image: url("chrome://skep/skin/skepArt/14_14/iphone.png");
+		
+}
+
+#skep-argumemt-label {
+	background: url("chrome://skep/skin/skepArt/10-10/loading.png") top left no-repeat;
+	margin-top: 1px;
+	height: 10px;
+	width: 10px;
+}
+
+#switchView {
+	height: 20px;
+
+}
+
+/* title */
+#skep-title {
+	border-bottom: 1px solid #cacaca;
+	height: 26px;
+	padding-top: 4px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#skep-buttons {
+	border-bottom: 1px solid #cacaca;
+	height: 26px;
+	padding-top: 4px;
+	margin-left: 70px;
+	margin-right: 20px;
+}
+
+
+/* search count for articles*/
+#skepArgumentsCount {
+    padding-top: 6px;  
+}
+
+#radioButtons {
+    padding-top: 3px;
+}
+
+#skep-fPassword {
+	margin-left: 247px;
+}
+
+#skep-articleTitle {
+	border-bottom: 1px solid #cacaca;
+	height: 26px;
+	padding-top: 4px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+
+#skep-articleType {
+	border-bottom: 1px solid #cacaca;
+	height: 26px;
+	padding-top: 4px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#skep-title-typeText {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#skep-title-biasText {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#skep-title-article-publishing-date {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#userName-txtBox {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#skep-title-argumentText {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 200px;
+	max-width: 200px;
+}
+
+}
+/* rating header */
+#skep-rating-header {
+	color: #878787;
+	font-size: 11px;
+	height: 19px;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 300px;
+}
+
+/* rating header */
+#skep-rating-articleHeader {
+	color: #878787;
+	font-size: 11px;
+	height: 19px;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 300px;
+}
+
+#skep-rating-typeHeader {
+	color: #878787;
+	font-size: 11px;
+	height: 23px;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100px;
+}
+
+.skep-rating-header {
+	color: #878787;
+	font-size: 11px;
+	line-height: 12px;
+	padding-left: 4px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 7px;
+	width: 600px;
+}
+
+
+#article-txtBox {
+	-moz-appearance: textfield;
+	font-family: georgia,arial,sans-serif;
+	font-size: 11px;
+	color: black;
+	width: 50px;	
+}
+
+#userNameLabel-txtBox {
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+}
+
+#register-txtBox {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+}
+
+.urlSkep
+{
+    color: #0000ff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.urlSkep:hover
+{
+    color: #ff0000;
+}
+
+#status-txtBox {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+}
+
+#version-txtBox {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+}
+
+#title-txtBox {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+}
+
+#argument-txtBox {
+	font-family: georgia,arial,sans-serif;
+	font-size: 10px;
+	color: black;
+	width: 50px;	
+}
+
+#skepArgumentsCount {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+}
+
+#skep-message-text {
+	color: #707070;
+	font-size: 11px;
+	line-height: 13px;
+	max-height: 45px;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+	width: 298px;
+}
+
+vbox#skep-title treechildren::-moz-tree-row(selected) { background-color: #FFFFAA; }  
+vbox#skep-title treechildren::-moz-tree-row(odd) { background-color: #D1EEEE; }  
+vbox#skep-title treechildren::-moz-tree-row(even) { background-color: #F5F5F5; }  
+vbox#skep-title treechildren::-moz-tree-row(odd, selected) { background-color: #FFFFAA; }  
+vbox#skep-title treechildren::-moz-tree-row(even, selected) { background-color: #FFFFAA; }
+vbox#skep-title treechildren::-moz-tree-cell-text(selected) { color: #000000; }  
+vbox#skep-title treechildren::-moz-tree-cell-text(odd, selected) { color: #000000; }

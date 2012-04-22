@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://skep/locale/skep.dtd">
+<?xml-stylesheet href="chrome://skep/skin/skep.css" type="text/css"?> 
+
+<!-- options.xul
+ Description: xul file for displaying of the login window
+ @author Cameron Bradley
+ Change History: 
+ Who When Description 
+ Michael.G 18/10/10 *added header comment* 
+ Michael.G 6/12/10  *changed apps loose variables to be wrapped in our objects*-->
+
+<window id="skep-prefs"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     onkeypress="Skeptical.options.keyPress(event);"
+     onload="Skeptical.options.loadIntoForm();"
+     onblur="Skeptical.options.lostFocus();">
+
+	<script type="application/x-javascript" src="chrome://skep/content/namespace.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepConfig.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepPrefs.js"/>
+	<script type="application/x-javascript" src="chrome://skep/content/skepCore.js"/>
+<script type="application/x-javascript" src="chrome://skep/content/options.js" />
+
+<!-- Import Bundleset. -->
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="xs-hw-string-bundle"
+      src="chrome://skep/locale/skep.properties" />
+  </stringbundleset>	
+
+<!-- Define preferences component used to capture and store user login details.  -->
+<prefpane id="skep-panel" label="Log in:">
+  <preferences>
+    <preference id="skep-sym" type="string"/>
+  </preferences>
+
+<!-- Imports elements for popup /background /color -->
+<!-- Background of popup. -->
+	<!-- header -->
+	<hbox id="skep-optionsHeader">
+	<box id="skep-header-optionsLogo"
+	onclick="Skeptical.options.clickHomePage(event);" />
+</hbox>
+
+<hbox id="skep-rating-logPassword">
+	<box flex="1" pack="center">
+		<description id="skep-title-login" style="white-space: pre;">Log In below, with your Skeptical Science 
+		username and password</description>
+	</box>
+</hbox>
+
+<!-- For username entry -->
+	<box pack="center">
+    	<label value="Username: "/>
+    	<textbox id="txt-Username" />
+    </box>
+
+<!-- for password entry -->
+	<box pack="center">
+    	<label value="Password:  "/>
+    	<textbox id="txt-Password" type="password" />
+    </box>
+
+<!-- Status Header. -->
+<vbox id="skep-title">
+	<hbox id="skep-rating-header">
+		<box flex="1" pack="center">
+		<label id="optionsStatus-txtBox" value="" />
+	</box>
+</hbox>
+
+<!-- Buttons for Login and Register -->
+<hbox align="center">
+	<box flex="1" pack="center">
+		<button id="login-Button" label="Log In" width="122" default="true" onkeydown="Skeptical.options.logIn(event);" onclick="Skeptical.options.logIn(event);" /> 
+		<vbox align="center">
+			<description id="register-txtBox" onclick="Skeptical.options.clickRegister(event);" class="url" style="white-space: pre;"> or register with Skeptical Science</description>
+			<description id="register-txtBox" onclick="Skeptical.options.clickForgotPassword(event);" class="url" style="white-space: pre;">Forgot your password?</description>	
+		</vbox>	
+	</box>
+</hbox>
+
+<hbox id="skep-space">
+	<box flex="1" pack="center">
+		<description id="skep-title-login" style="white-space: pre;">space</description>
+	</box>
+</hbox>
+
+</vbox>
+</prefpane>
+</window>
+

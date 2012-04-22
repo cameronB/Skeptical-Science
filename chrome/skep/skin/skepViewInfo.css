@@ -1,0 +1,382 @@
+/*
+ * skepViewInfo.css
+ * Description: css file for controling style of skepViewArguments.xul and its toolbar icon
+ * @author Cameron Bradley, Michael Gillies 24/9/2010
+ * Change History:
+ * Who When Description
+ * ------------------------------------------------------------------
+ * Michael.G 24/09/10 <<initial version>>
+ * Michael.G 29/09/10 <<SKEPFF-75>>
+ * Michael.G 1/10/10  <<SKEPFF-82>>
+ * Michael.G 8/10/10  <<SKEPFF-90 science description argument now resizeing>>
+ * Michael.G 13/10/10 <<removed cursor dislpay from the science-caption>>
+ * Michael.G 28/10/10  <<Code review Changes>>
+  * Michael.G 3/11/10  <<changed class of type url to urlSkep for SKEPFF-121>>
+ */
+
+#main-window #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/loadingDark.png");
+}
+
+#main-window[skep-status="1"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/orange.png");
+}
+
+#main-window[skep-status="1.1"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/orange/1.png");
+}
+
+#main-window[skep-status="1.2"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/orange/2.png");
+}
+
+#main-window[skep-status="1.3"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/orange/3.png");
+}
+
+#main-window[skep-status="1.4"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/orange/4.png");
+}
+
+#main-window[skep-status="1.5"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/orange/5.png");
+}
+
+
+#main-window[skep-status="2"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/red.png");
+}
+
+#main-window[skep-status="2.1"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/red/1.png");
+}
+
+#main-window[skep-status="2.2"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/red/2.png");
+}
+
+#main-window[skep-status="2.3"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/red/3.png");
+}
+
+#main-window[skep-status="2.4"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/red/4.png");
+}
+
+#main-window[skep-status="2.5"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/red/5.png");
+}
+
+
+#main-window[skep-status="3"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/new_trusted.png");
+}
+
+#main-window[skep-status="3.1"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/green/1.png");
+}
+
+#main-window[skep-status="3.2"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/green/2.png");
+}
+
+#main-window[skep-status="3.3"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/green/3.png");
+}
+
+#main-window[skep-status="3.4"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/green/4.png");
+}
+
+#main-window[skep-status="3.5"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/counter/green/5.png");
+}
+
+
+#main-window[skep-status="4"] #skep-viewButton {
+		list-style-image: url("chrome://skep/skin/skepArt/24_24/loadingDark.png");
+}
+
+/* rating window */
+#skep-popup-view {
+	padding: 0;
+	margin: 0;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+#explanationWindow {
+    background: #F5F5DC;
+    -moz-appearance: none;
+    -moz-border-radius: 0 25px 25px 0;
+    border-radius: 0 25px 25px 0; 
+    margin-right:15px;  
+}
+
+#skeptic-caption {
+    background: #F5F5DC;
+}
+
+#science-caption {
+    background: #F5F5DC;
+}
+
+#scienceCaptionLabel {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 14px;
+}
+
+#skepticCaptionLabel {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 14px;
+}
+
+#scienceDescHtml {
+    font-family: Tahoma, Arial, sans-serif;
+    margin-bottom:1px;
+}
+
+#rebuttalURL {
+    padding-top:4px;    
+}
+
+#mainVbox {
+     background: #F5F5DC;
+    -moz-appearance: none;
+ }
+
+/*testing arguments popup*/
+#test-vbox {
+    background: #F5F5DC;
+    -moz-appearance: none;
+    -moz-border-radius: 0 25px 25px 0;
+    width: 300px !important;
+    border-radius: 0 25px 25px 0;
+}
+
+#switchAdd {
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 6px;
+}
+
+#skeptic-group {
+    color: red;
+}
+
+#science-group {
+    color: green;
+}
+
+#skeptic-desc {
+    color: black;
+    font-family: Tahoma,arial,sans-serif;
+    font-size: 13px;
+}
+
+#science-desc {
+    color: black;
+}
+
+/* header */
+#skep-header {
+	height: 60px;
+	margin-left: 7px;
+	margin-right: 7px;
+	margin-top: 7px;
+	width: 00px;
+}
+
+#switchAdd {
+	height: 20px;
+	margin-left: 280px;
+
+}
+
+#skep-header-smallLogo {
+	background: url("chrome://skep/skin/skepArt/Header_View_Report.png") top left no-repeat;
+	cursor: pointer;
+	height: 69px;
+	width: 378px;
+}
+
+/* search count for articles*/
+#skepArgumentsCount {
+    padding-top: 6px;  
+}
+
+#skep-articleTitle {
+	border-bottom: 1px solid #cacaca;
+	height: 26px;
+	padding-top: 4px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#skep-articleType {
+	border-bottom: 1px solid #cacaca;
+	height: 26px;
+	padding-top: 4px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#skepViewArgumentsCount {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+}
+
+
+#skep-title-articleText {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 200px;
+	max-width: 200px;
+}
+
+#skep-title-typeText {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#skep-title-article-publishing-date {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#skepArticlePublishingDate {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#skep-title-biasText {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 20px;
+	max-width: 20px;
+}
+
+#skep-title-argumentText {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+	width: 200px;
+	max-width: 200px;
+}
+
+}
+/* rating header */
+#skep-rating-header {
+	color: #878787;
+	font-size: 11px;
+	height: 19px;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 300px;
+}
+
+/* rating header */
+#skep-rating-articleHeader {
+	color: #878787;
+	font-size: 11px;
+	height: 19px;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 300px;
+}
+
+#skep-rating-typeHeader {
+	color: #878787;
+	font-size: 11px;
+	height: 23px;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100px;
+}
+
+.skep-rating-header {
+	color: #878787;
+	font-size: 12px;
+	line-height: 12px;
+	padding-left: 4px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 7px;
+	width: 600px;
+}
+
+.urlSkep
+{
+    color: #0000ff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.urlSkep:hover
+{
+    color: #ff0000;
+}
+
+#status-viewTxtBox {
+	color: #777676;
+	font-size: 11px;
+	position: absolute;
+	width: 20px;	
+}
+
+#version-viewTxtBox {
+	color: #777676;
+	font-size: 11px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 4px;
+}
+
+#argument-view-txtBox {
+	font-family: georgia,arial,sans-serif;
+	font-size: 10px;
+	color: black;
+	width: 50px;	
+}
+
+vbox#skep-title treechildren::-moz-tree-row(selected) { background-color: #FFFFAA; }  
+vbox#skep-title treechildren::-moz-tree-row(odd) { background-color: #D1EEEE; }  
+vbox#skep-title treechildren::-moz-tree-row(even) { background-color: #F5F5F5; }  
+vbox#skep-title treechildren::-moz-tree-row(odd, selected) { background-color: #FFFFAA; }  
+vbox#skep-title treechildren::-moz-tree-row(even, selected) { background-color: #FFFFAA; }
+vbox#skep-title treechildren::-moz-tree-cell-text(selected) { color: #000000; }  
+vbox#skep-title treechildren::-moz-tree-cell-text(odd, selected) { color: #000000; }

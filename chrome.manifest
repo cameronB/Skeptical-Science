@@ -1,0 +1,16 @@
+# Skeptical Science * chrome.manifest
+# Description:File to inform firefox where our content for the extension is
+# also defines what overlays to load
+#
+# @author Cameron Bradley
+# Change History:
+# Who When Description
+# ------------------------------------------------------------------
+# Michael.G 30/9/10 <<added heading comment>>
+content	skep	chrome/skep/content/
+content	skep	chrome/skep/content/ contentaccessible=yes
+overlay	chrome://browser/content/browser.xul	chrome://skep/content/skepOverlay.xul
+overlay chrome://browser/content/browser.xul    chrome://skep/content/skepViewArguments.xul
+locale	skep	en-US	chrome/skep/locale/en-US/
+skin	skep	classic/1.0	chrome/skep/skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://skep/skin/toolbar.css
